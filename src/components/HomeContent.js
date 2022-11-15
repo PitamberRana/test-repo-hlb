@@ -1,7 +1,8 @@
-import { Button, Box, Typography } from "@mui/material";
+import { Button, Box, Typography, Paper } from "@mui/material";
 import React from "react";
 import { Container } from "@mui/system";
 import { Icon } from "@iconify/react";
+import { useTheme } from "@emotion/react";
 
 const handleCreateWallet = () => {
   return console.log("Created");
@@ -11,13 +12,28 @@ const handleRestoreWallet = () => {
   return console.log("Restored");
 };
 
+const styles = {
+  image: {
+    backgroundImage: `url(${"https://assets.rumsan.com/esatya/hlb-navbar-logo.png"})`,
+    opacity: 0.1,
+  },
+};
+
 export default function HomeContent() {
+  const theme = useTheme();
+
   return (
     <Container>
-      <Typography variant="h3" sx={{ marginTop: 5 }}>
+      <Typography variant="h3" sx={{ mt: 5, pb: 2 }}>
         Let's setup your wallet.
       </Typography>
-      <Box sx={{ border: 0.1, p: 2, borderRadius: 1 }}>
+      <Box
+        sx={{
+          border: 0.1,
+          p: 2,
+          borderRadius: 1,
+        }}
+      >
         <Button
           variant="contained"
           sx={{ mt: 2, mb: 2 }}
@@ -33,7 +49,7 @@ export default function HomeContent() {
         </Button>
       </Box>
       <hr />
-      <Typography variant="h5" sx={{ marginTop: 2 }}>
+      <Typography variant="h5" sx={{ mt: 2, pb: 2 }}>
         Restore existing wallet from
       </Typography>
       <Box
@@ -52,7 +68,12 @@ export default function HomeContent() {
           fullWidth
           onClick={handleRestoreWallet}
         >
-          <Icon icon="bi:file-earmark-text-fill" height={30} width={40} />
+          <Icon
+            icon="bi:file-earmark-text-fill"
+            height={30}
+            width={40}
+            color={theme.palette.secondary.main}
+          />
           Seed phrase
         </Button>
 
@@ -65,7 +86,12 @@ export default function HomeContent() {
           fullWidth
           onClick={handleRestoreWallet}
         >
-          <Icon icon="ant-design:google-square-filled" height={30} width={40} />
+          <Icon
+            icon="akar-icons:google-fill"
+            height={30}
+            width={40}
+            color={theme.palette.primary.lighter}
+          />
           Google drive
         </Button>
       </Box>

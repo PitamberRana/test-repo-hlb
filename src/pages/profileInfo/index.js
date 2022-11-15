@@ -17,10 +17,10 @@ export default function ProfileInfo() {
   return (
     <Container sx={{ maxWidth: "90%" }} maxWidth={false}>
       <DashboardLayout pageTitle={PAGE_TITLE}>
-        <Typography variant="h3" sx={{ mb: 2 }}>
+        <Typography variant="h3" sx={{ mt: 2 }}>
           Let's register for donation
         </Typography>
-        <Box>
+        <Box sx={{ p: 2 }}>
           <InputLabel> Full name</InputLabel>
           <TextField
             id="fullname"

@@ -9,11 +9,11 @@ export default function mnemonic() {
   return (
     <Container>
       <DashboardLayout pageTitle={PAGE_TITLE}>
-        <Typography variant="h4"> Let's secure your account.</Typography>
+        <Typography variant="h3"> Let's secure your account.</Typography>
         <Typography variant="subtitle3">
           Please save this 12 word mnemonic safely.
         </Typography>
-        <Box sx={{ p: 5 }}>
+        <Box sx={{ p: 3 }}>
           <Grid container xs={12} spacing={2}>
             <Grid item xs={6} md={4} lg={3}>
               <InputLabel> word 1</InputLabel>
@@ -64,13 +64,19 @@ export default function mnemonic() {
               <TextField size="small" />
             </Grid>
           </Grid>
-          <Box pt={3}>
+          <Box pt={5}>
             <Grid container xs={12} spacing={2}>
               <Grid item xs={12} md={6}>
-                <Button variant="contained"> Yes, I've written down</Button>
+                <Button variant="contained" fullWidth>
+                  {" "}
+                  Yes, I've written down
+                </Button>
               </Grid>
-              <Grid item xs={12} md={6}>
-                <Button variant="outlined"> Cancel</Button>
+              <Grid item xs={12} md={4}>
+                <Button variant="outlined" fullWidth>
+                  {" "}
+                  Cancel
+                </Button>
               </Grid>
             </Grid>
           </Box>
