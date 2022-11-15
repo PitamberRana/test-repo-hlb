@@ -1,6 +1,7 @@
-import { Button, Typography } from "@mui/material";
+import { Button, Box, Typography } from "@mui/material";
 import React from "react";
 import { Container } from "@mui/system";
+import { Icon } from "@iconify/react";
 
 const handleCreateWallet = () => {
   return console.log("Created");
@@ -16,44 +17,58 @@ export default function HomeContent() {
       <Typography variant="h3" sx={{ marginTop: 5 }}>
         Let's setup your wallet.
       </Typography>
-
-      <Button
-        variant="contained"
-        sx={{ marginTop: 2, marginBottom: 2, width: 335 }}
-        onClick={handleCreateWallet}
-      >
-        Create new wallet
-      </Button>
+      <Box sx={{ border: 0.1, p: 2, borderRadius: 1 }}>
+        <Button
+          variant="contained"
+          sx={{ mt: 2, mb: 2 }}
+          fullWidth
+          onClick={handleCreateWallet}
+        >
+          <Icon
+            icon="fluent:wallet-credit-card-24-filled"
+            height={30}
+            width={40}
+          />
+          Create new wallet
+        </Button>
+      </Box>
       <hr />
-      <Typography variant="subtitle1" sx={{ marginTop: 2 }}>
+      <Typography variant="h5" sx={{ marginTop: 2 }}>
         Restore existing wallet from
       </Typography>
-      <div>
+      <Box
+        sx={{
+          border: 0.1,
+          p: 2,
+          borderRadius: 1,
+        }}
+      >
         <Button
           sx={{
-            marginTop: 2,
-            width: 335,
+            mt: 2,
             border: 1,
             color: "common.black",
           }}
+          fullWidth
           onClick={handleRestoreWallet}
         >
+          <Icon icon="bi:file-earmark-text-fill" height={30} width={40} />
           Seed phrase
         </Button>
-      </div>
-      <div>
+
         <Button
           sx={{
-            marginTop: 2,
-            width: 335,
+            mt: 2,
             border: 1,
             color: "common.black",
           }}
+          fullWidth
           onClick={handleRestoreWallet}
         >
+          <Icon icon="ant-design:google-square-filled" height={30} width={40} />
           Google drive
         </Button>
-      </div>
+      </Box>
     </Container>
   );
 }

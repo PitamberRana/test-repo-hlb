@@ -1,7 +1,7 @@
 import { Box, Container } from "@mui/system";
 import React from "react";
 import DashboardLayout from "@layouts/dashboard/DashboardLayout";
-import { Button, InputLabel, TextField, Typography } from "@mui/material";
+import { Button, Grid, InputLabel, TextField, Typography } from "@mui/material";
 
 const PAGE_TITLE = "mnemonic";
 
@@ -13,34 +13,68 @@ export default function mnemonic() {
         <Typography variant="subtitle3">
           Please save this 12 word mnemonic safely.
         </Typography>
-        <Box>
-          <InputLabel> word 1</InputLabel>
-          <TextField />
-          <InputLabel> word 2</InputLabel>
-          <TextField />
-          <InputLabel> word 3</InputLabel>
-          <TextField />
-          <InputLabel> word 4</InputLabel>
-          <TextField />
-          <InputLabel> word 5</InputLabel>
-          <TextField />
-          <InputLabel> word 6</InputLabel>
-          <TextField />
-          <InputLabel> word 7</InputLabel>
-          <TextField />
-          <InputLabel> word 8</InputLabel>
-          <TextField />
-          <InputLabel> word 9</InputLabel>
-          <TextField />
-          <InputLabel> word 10</InputLabel>
-          <TextField />
-          <InputLabel> word 11</InputLabel>
-          <TextField />
-          <InputLabel> word 12</InputLabel>
-          <TextField />
+        <Box sx={{ p: 5 }}>
+          <Grid container xs={12} spacing={2}>
+            <Grid item xs={6} md={4} lg={3}>
+              <InputLabel> word 1</InputLabel>
+              <TextField size="small" />
+            </Grid>
+            <Grid item xs={6} md={4} lg={3}>
+              <InputLabel> word 2</InputLabel>
+              <TextField size="small" />
+            </Grid>
+            <Grid item xs={6} md={4} lg={3}>
+              <InputLabel> word 3</InputLabel>
+              <TextField size="small" />
+            </Grid>
+            <Grid item xs={6} md={4} lg={3}>
+              <InputLabel> word 4</InputLabel>
+              <TextField size="small" />
+            </Grid>
+            <Grid item xs={6} md={4} lg={3}>
+              <InputLabel> word 5</InputLabel>
+              <TextField size="small" />
+            </Grid>
+            <Grid item xs={6} md={4} lg={3}>
+              <InputLabel> word 6</InputLabel>
+              <TextField size="small" />
+            </Grid>
+            <Grid item xs={6} md={4} lg={3}>
+              <InputLabel> word 7</InputLabel>
+              <TextField size="small" />
+            </Grid>
+            <Grid item xs={6} md={4} lg={3}>
+              <InputLabel> word 8</InputLabel>
+              <TextField size="small" />
+            </Grid>
+            <Grid item xs={6} md={4} lg={3}>
+              <InputLabel> word 9</InputLabel>
+              <TextField size="small" />
+            </Grid>
+            <Grid item xs={6} md={4} lg={3}>
+              <InputLabel> word 10</InputLabel>
+              <TextField size="small" />
+            </Grid>
+            <Grid item xs={6} md={4} lg={3}>
+              <InputLabel> word 11</InputLabel>
+              <TextField size="small" />
+            </Grid>
+            <Grid item xs={6} md={4} lg={3}>
+              <InputLabel> word 12</InputLabel>
+              <TextField size="small" />
+            </Grid>
+          </Grid>
+          <Box pt={3}>
+            <Grid container xs={12} spacing={2}>
+              <Grid item xs={12} md={6}>
+                <Button variant="contained"> Yes, I've written down</Button>
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <Button variant="outlined"> Cancel</Button>
+              </Grid>
+            </Grid>
+          </Box>
         </Box>
-        <Button variant="contained"> Yes, I've written down</Button>
-        <Button variant="outlined"> Cancel</Button>
       </DashboardLayout>
     </Container>
   );
